@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://code.alibabatech.com/schema/dubbo
+    http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!--userLoginProvider-->
+    <dubbo:reference id="userLoginProvider" interface="com.dq.manage.provider.UserLoginProvider" timeout="3000"/>
+
+    <!--dataManagerConfigureProvider-->
+    <dubbo:reference id="dataManagerConfigureProvider" interface="com.dq.manage.provider.DataManagerConfigureProvider" timeout="3000"/>
+
+    <!--upLoadClassIfyProvider-->
+    <dubbo:reference id="upLoadClassIfyProvider" interface="com.dq.manage.provider.UpLoadClassIfyProvider" timeout="3000"/>
+
+    <!--uploadFileItemProvider-->
+    <dubbo:reference id="uploadFileItemProvider" interface="com.dq.manage.provider.UploadFileItemProvider" timeout="3000"/>
+
+</beans>

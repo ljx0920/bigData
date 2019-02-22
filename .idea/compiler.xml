@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Common-V1.0" />
+        <module name="Common-V2.0" />
+        <module name="DataQuery-Domain" />
+        <module name="DataQuery-Restful" />
+        <module name="DataQuery-Server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="BigData-Cloud2.0" target="1.5" />
+      <module name="Cloud-Common" target="1.5" />
+      <module name="Common-V1.0" target="1.8" />
+      <module name="Common-V2.0" target="1.8" />
+      <module name="DataQuery-Domain" target="1.8" />
+      <module name="DataQuery-Restful" target="1.8" />
+      <module name="DataQuery-Server" target="1.8" />
+      <module name="DataQuery-V1.0" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

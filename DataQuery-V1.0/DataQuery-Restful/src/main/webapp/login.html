@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>车辆网平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="common/css/bootstrap.css" rel="stylesheet">
+    <link href="common/css/theme.css" rel="stylesheet">
+    <link href="common/css/login.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="common/js/html5shiv.min.js"></script>
+    <script src="common/js/respond.min.js"></script>
+    <![endif]  -->
+</head>
+
+<body>
+<div class="logo_box">
+    <form class="form-inline" role="form">
+        <h1>车联网平台</h1>
+        <div class="form-group">
+            <label class="sr-only" for="loginName">loginname</label>
+            <input type="text" class="form-control input-sm" id="loginName" placeholder="请输入用户名...">
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="passWord">password</label>
+            <input type="password" class="form-control input-sm" id="passWord" placeholder="请输入密码...">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-yellow btn-sm">登录</button>
+        </div>
+        <div class="form-group" id="errorMessage">
+
+        </div>
+        <!--系统用户登录页面-->
+        <input type="hidden" id="loginParam" value="system">
+    </form>
+</div>
+<script src="common/js/base/jquery.js"></script>
+<script>
+        $(document).ready(function() {
+            $(".logo_box").animate({"opacity": 1,"top":"20%","left":"50%","margin-left":"-386px"}, 600);
+            $("form").submit(function(event) {
+                var jsonStr="{loginName:'"+$("#loginName").val()+"',passWord:'"+$("#passWord").val()+"',loginParam:'"+$("#loginParam").val()+"'}";
+                $.ajax({
+                    type: "POST",
+                    url:"/cloud/rest/system/userRestServer/login",
+                    data:jsonStr,
+                    contentType:"application/json",
+                    cache: false,
+                    dataType:"json",
+                    success: function(result){
+                        if(result.status=='success'){
+                            window.location=result.content;
+                        }else{
+                            //提示错误信息，置空信息
+                            $("#errorMessage").text(result.message);
+                            $("#loginName").val('');
+                            $("#passWord").val('');
+                        }
+                    },
+                    error:function(result){
+                        //提示错误信息，置空信息
+                        $("#errorMessage").text(result.message);
+                        $("#loginName").val('');
+                        $("#passWord").val('');
+                    }
+                });
+                return false;
+            });
+        });
+
+
+</script>
+</body>
+</html>

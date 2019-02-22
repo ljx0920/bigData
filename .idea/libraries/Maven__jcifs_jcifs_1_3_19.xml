@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: jcifs:jcifs:1.3.19">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.m2/repository/jcifs/jcifs/1.3.19/jcifs-1.3.19.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.m2/repository/jcifs/jcifs/1.3.19/jcifs-1.3.19-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.m2/repository/jcifs/jcifs/1.3.19/jcifs-1.3.19-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

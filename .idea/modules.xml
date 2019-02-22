@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/BigData-Cloud2.0.iml" filepath="$PROJECT_DIR$/.idea/BigData-Cloud2.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Cloud-Common/Cloud-Common.iml" filepath="$PROJECT_DIR$/Cloud-Common/Cloud-Common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Cloud-Common/Common-V1.0/Common-V1.0.iml" filepath="$PROJECT_DIR$/Cloud-Common/Common-V1.0/Common-V1.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Cloud-Common/Common-V2.0/Common-V2.0.iml" filepath="$PROJECT_DIR$/Cloud-Common/Common-V2.0/Common-V2.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Domain/DataQuery-Domain.iml" filepath="$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Domain/DataQuery-Domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Restful/DataQuery-Restful.iml" filepath="$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Restful/DataQuery-Restful.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/DataQuery-Server.iml" filepath="$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/DataQuery-Server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-V1.0.iml" filepath="$PROJECT_DIR$/DataQuery-V1.0/DataQuery-V1.0.iml" />
+    </modules>
+  </component>
+</project>

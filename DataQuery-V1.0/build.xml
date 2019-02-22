@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="IOV-DataQuery" default="all" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+    <property name="compiler.debug" value="on"/>
+
+    <property name="mvn.home" value="C:/JavaTools/apache-maven-3.3.9"/>
+    <property name="mvn.repos" value="D:/.m2/repository"/>
+
+
+    <property name="build.home" value="./"/>
+    <property name="jdkpath" value="${JAVA_HOME}"/>
+    <echo message="java version = ${ant.java.version}"/>
+
+    <echo>============================================</echo>
+    <echo>======= 默认Ant Target，将会编译DataQuery组件=====</echo>
+    <echo>============================================</echo>
+
+    <property name="common" value="${basedir}/${build.home}/common"/>
+    <property name="common.jar" value="DataQuery-Common-1.0.jar"/>
+
+    <property name="domain" value="${basedir}/${build.home}/domain"/>
+    <property name="domain.jar" value="DataQuery-Domain-1.0.jar"/>
+
+    <target name="all" depends="clean,common,domain,restful,server"/>
+
+
+    <!-- DataQuery-Common -->
+    <target name="common">
+        <property name="common.pom.file" value="../Cloud-Common/Common-V2.0/pom.xml"/>
+        <property name="common.target.classes" value="../Cloud-Common/Common-V2.0/target/classes"/>
+
+        <mkdir dir="${common}"/>
+
+        <artifact:pom id="common.pom" file="${common.pom.file}"/>
+        <artifact:dependencies filesetId="common.fileset" useScope="compile">
+            <localrepository path="${mvn.repos}"/>
+            <pom refid="common.pom"/>
+        </artifact:dependencies>
+
+        <jar destfile="${common}/${common.jar}">
+            <fileset dir="${common.target.classes}"/>
+        </jar>
+        <echo message="########  DataQuery-Common package successful ################"/>
+    </target>
+
+    <!-- DataQuery-Domain -->
+    <target name="domain">
+
+        <property name="domain.pom.file" value="./DataQuery-Domain/pom.xml"/>
+        <property name="domain.target.classes" value="./DataQuery-Domain/target/classes"/>
+
+        <mkdir dir="${domain}"/>
+
+        <artifact:pom id="domain.pom" file="${domain.pom.file}"/>
+        <artifact:dependencies filesetId="domain.fileset" useScope="">
+            <localrepository path="${mvn.repos}"/>
+            <pom refid="domain.pom"/>
+        </artifact:dependencies>
+
+        <jar destfile="${domain}/${domain.jar}">
+            <fileset dir="${domain.target.classes}"/>
+        </jar>
+
+        <echo message="########  DataQuery-Domain package successful ################"/>
+    </target>
+
+    <!-- DataQuery-Restful -->
+    <target name="restful">
+        <property name="restful.resources" value="./DataQuery-Restful/src/main/resources/"/>
+        <property name="restful.pom.file" value="./DataQuery-Restful/pom.xml"/>
+        <property name="restful.target.classes" value="./DataQuery-Restful/target/classes"/>
+        <property name="restful.src" value="./DataQuery-Restful/src/main/java"/>
+        <property name="restful.jar" value="DataQuery-Restful-1.0.jar"/>
+        <property name="restful.scripts" value="./DataQuery-Restful/src/main/resources/bin"/>
+
+
+        <property name="restful" value="${basedir}/${build.home}/DataQuery-Restful"/>
+        <property name="restful.bin" value="${restful}/bin/"/>
+        <property name="restful.classes" value="${restful}/classes"/>
+        <property name="restful.lib" value="${restful}/lib/"/>
+        <property name="restful.dest.resources" value="${restful}/resources/"/>
+
+        <mkdir dir="${restful}"/>
+        <mkdir dir="${restful.lib}"/>
+        <mkdir dir="${restful.bin}"/>
+
+        <copy todir="${restful.bin}">
+            <fileset dir="${restful.scripts}" excludes="**/.svn/**/*.*"/>
+        </copy>
+        <copy todir="${restful.dest.resources}">
+            <fileset dir="${restful.resources}" excludes="**/.svn/**/*.*"/>
+        </copy>
+
+        <artifact:pom id="restful.pom" file="${restful.pom.file}"/>
+        <artifact:dependencies filesetId="restful.fileset" useScope="compile">
+            <localrepository path="${mvn.repos}"/>
+            <pom refid="restful.pom"/>
+        </artifact:dependencies>
+
+        <copy todir="${restful.lib}">
+            <fileset refid="restful.fileset"/>
+            <mapper type="flatten"/>
+        </copy>
+
+        <jar destfile="${restful.lib}/${restful.jar}">
+            <fileset dir="${restful.target.classes}"/>
+        </jar>
+
+        <delete file="${restful.lib}/${common.jar}"/>
+        <delete file="${restful.lib}/${domain.jar}"/>
+
+
+        <copy todir="${restful.lib}">
+            <fileset dir="${common}">
+                <include name="${common.jar}"/>
+            </fileset>
+        </copy>
+
+        <copy todir="${restful.lib}">
+            <fileset dir="${domain}">
+                <include name="${domain.jar}"/>
+            </fileset>
+        </copy>
+
+        <delete dir="${restful.dest.resources}bin"/>
+        <delete dir="${restful.classes}"/>
+        <echo message="########  DataQuery-restful package successful ################"/>
+    </target>
+
+    <!-- DataQuery-Server -->
+    <target name="server">
+        <property name="server.resources" value="./DataQuery-Server/src/main/resources/"/>
+        <property name="server.pom.file" value="./DataQuery-Server/pom.xml"/>
+        <property name="server.target.classes" value="./DataQuery-Server/target/classes"/>
+        <property name="server.src" value="./DataQuery-Server/src/main/java"/>
+        <property name="server.jar" value="DataQuery-Server-1.0.jar"/>
+        <property name="server.scripts" value="./DataQuery-Server/src/main/resources/bin"/>
+
+
+        <property name="server" value="${basedir}/${build.home}/DataQuery-Server"/>
+        <property name="server.bin" value="${server}/bin/"/>
+        <property name="server.classes" value="./DataQuery-Server/classes"/>
+        <property name="server.lib" value="${server}/lib/"/>
+        <property name="server.dest.resources" value="${server}/resources/"/>
+        <property name="server.dest.webapp" value="${server}/webapp/"/>
+
+        <mkdir dir="${server}"/>
+        <mkdir dir="${server.classes}"/>
+        <mkdir dir="${server.lib}"/>
+        <mkdir dir="${server.bin}"/>
+
+        <copy todir="${server.bin}">
+            <fileset dir="${server.scripts}" excludes="**/.svn/**/*.*"/>
+        </copy>
+        <copy todir="${server.dest.resources}">
+            <fileset dir="${server.resources}" excludes="**/.svn/**/*.*"/>
+        </copy>
+
+
+        <artifact:pom id="server.pom" file="${server.pom.file}"/>
+        <artifact:dependencies filesetId="server.fileset" useScope="compile">
+            <localrepository path="${mvn.repos}"/>
+            <pom refid="server.pom"/>
+        </artifact:dependencies>
+
+        <copy todir="${server.lib}">
+            <fileset refid="server.fileset"/>
+            <mapper type="flatten"></mapper>
+        </copy>
+
+        <jar destfile="${server.lib}/${server.jar}">
+            <fileset dir="${server.target.classes}"/>
+        </jar>
+
+        <delete file="${server.lib}/${common.jar}"/>
+        <delete file="${server.lib}/${domain.jar}"/>
+
+        <copy todir="${server.lib}">
+            <fileset dir="${common}">
+                <include name="${common.jar}"/>
+            </fileset>
+        </copy>
+
+        <copy todir="${server.lib}">
+            <fileset dir="${domain}">
+                <include name="${domain.jar}"/>
+            </fileset>
+        </copy>
+        <echo message="${server.lib}"/>
+
+
+        <delete dir="${server.dest.resources}bin"/>
+        <delete dir="${server.classes}"/>
+        <echo message="########  DataQuery-Server  package successful ################"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build.home}"/>
+        <mkdir dir="${build.home}"/>
+    </target>
+
+    <target name="clean_base">
+        <delete dir="${common}"/>
+        <delete dir="${domain}"/>
+    </target>
+</project>

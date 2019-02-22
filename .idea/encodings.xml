@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Cloud-Common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Cloud-Common/Common-V1.0" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Cloud-Common/Common-V2.0" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/DataQuery-V1.0" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Domain" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Restful" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server" charset="UTF-8" />
+  </component>
+</project>

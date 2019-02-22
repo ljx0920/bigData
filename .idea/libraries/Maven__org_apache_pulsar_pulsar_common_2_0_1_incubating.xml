@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.pulsar:pulsar-common:2.0.1-incubating">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.m2/repository/org/apache/pulsar/pulsar-common/2.0.1-incubating/pulsar-common-2.0.1-incubating.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.m2/repository/org/apache/pulsar/pulsar-common/2.0.1-incubating/pulsar-common-2.0.1-incubating-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.m2/repository/org/apache/pulsar/pulsar-common/2.0.1-incubating/pulsar-common-2.0.1-incubating-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

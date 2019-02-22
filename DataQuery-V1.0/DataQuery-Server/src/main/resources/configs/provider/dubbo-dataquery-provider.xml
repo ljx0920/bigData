@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://code.alibabatech.com/schema/dubbo
+    http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!--userLoginProvider-->
+    <bean id="userLoginProvider" class="com.dq.manage.provider.UserLoginProviderImpl"/>
+    <dubbo:service interface="com.dq.manage.provider.UserLoginProvider" ref="userLoginProvider" retries="0" protocol="dubbo"/>
+
+    <!--dataManagerConfigureProvider-->
+    <bean id="dataManagerConfigureProvider" class="com.dq.manage.provider.DataManageConfigureProviderImpl"/>
+    <dubbo:service interface="com.dq.manage.provider.DataManagerConfigureProvider" ref="dataManagerConfigureProvider" retries="0" protocol="dubbo"/>
+
+    <!--upLoadClassIfyProvider-->
+    <bean id="upLoadClassIfyProvider" class="com.dq.manage.provider.UpLoadClassIfyProviderImpl"/>
+    <dubbo:service interface="com.dq.manage.provider.UpLoadClassIfyProvider" ref="upLoadClassIfyProvider" retries="0" protocol="dubbo"/>
+
+    <!--upLoadClassIfyProvider-->
+    <bean id="uploadFileItemProvider" class="com.dq.manage.provider.UploadFileItemProviderImpl"/>
+    <dubbo:service interface="com.dq.manage.provider.UploadFileItemProvider" ref="uploadFileItemProvider" retries="0" protocol="dubbo"/>
+</beans>

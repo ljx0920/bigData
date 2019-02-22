@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="BigData-Cloud" default="run" basedir="." >
+
+    <target name="run">
+        <!--<ant antfile="CloudData-V2.0/build.xml" dir="." />-->
+        <!--<ant antfile="DataShow-V2.0/build.xml" dir="." />-->
+        <ant antfile="DataQuery-V1.0/build.xml" dir="." />
+    </target>
+
+</project>
