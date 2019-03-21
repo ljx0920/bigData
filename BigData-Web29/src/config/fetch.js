@@ -66,6 +66,8 @@ export default async(url = '', data = {}, type = 'GET', notify = false, loading 
 					vm.$_notify = vm.$notify.error({
 						title: '失败',
 						message: responseJson.message || "fetch.js操作失败",
+						message: responseJson.message || "操作失败",
+
 						duration: 3000
 					});
 				}

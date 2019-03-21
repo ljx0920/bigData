@@ -4,12 +4,20 @@
 			<el-form-item label="数据项:" prop="dataType">
 				<el-input v-model="form.dataType" placeholder="数据项"></el-input>
 			</el-form-item>
+<<<<<<< HEAD
 			<!-- <el-form-item label="IOV地址:" prop="queryTarget">
+=======
+			<el-form-item label="IOV地址:" prop="queryTarget">
+>>>>>>> e10212a07eb61f28afed3b9dd130234dc8223128
 				<el-input v-model="form.queryTarget" placeholder="IOV地址"></el-input>
 			</el-form-item>
 			<el-form-item label="解析地址:" prop="executeTarget">
 				<el-input v-model="form.executeTarget" placeholder="解析地址"></el-input>
+<<<<<<< HEAD
 			</el-form-item> -->
+=======
+			</el-form-item>
+>>>>>>> e10212a07eb61f28afed3b9dd130234dc8223128
 			<el-form-item label="上传地址:" prop="serverStoreDir">
 				<el-input v-model="form.serverStoreDir" placeholder="上传地址"></el-input>
 			</el-form-item>

@@ -51,6 +51,7 @@
 					}, {
 						prop: "serverStoreDir",
 						label: "服务器路径"
+<<<<<<< HEAD
 					}, 
 // 					{
 // 						prop: "queryTarget",
@@ -60,6 +61,15 @@
 // 						label: "解析地址"
 // 					}, 
 					{
+=======
+					}, {
+						prop: "queryTarget",
+						label: "IOV地址"
+					}, {
+						prop: "executeTarget",
+						label: "解析地址"
+					}, {
+>>>>>>> e10212a07eb61f28afed3b9dd130234dc8223128
 						prop: "creater",
 						label: "创建人"
 					}, {

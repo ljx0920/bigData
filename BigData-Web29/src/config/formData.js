@@ -67,7 +67,11 @@ export default async(url = '', data = {}, method = 'GET', notify = false) => {
 							} else {
 								vm.$_notify = vm.$notify.error({
 									title: '失败',
+<<<<<<< HEAD
 									message: obj.message || "formData.js操作失败"
+=======
+									message: obj.message || "操作失败"
+>>>>>>> e10212a07eb61f28afed3b9dd130234dc8223128
 								});
 							}
 						}

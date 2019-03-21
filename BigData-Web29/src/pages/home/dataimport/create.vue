@@ -114,6 +114,10 @@
 				} else {
 					this.$refs.uploadItem.submit();
 				}
+<<<<<<< HEAD
+=======
+				alert("allType:");
+>>>>>>> e10212a07eb61f28afed3b9dd130234dc8223128
 			}
 		}
 	}

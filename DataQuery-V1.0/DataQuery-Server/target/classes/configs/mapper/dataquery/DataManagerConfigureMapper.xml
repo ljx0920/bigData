@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dq.manage.mapper.DataManagerConfigureMapper">
+
+    <resultMap type="com.dq.manage.entity.DataManagerConfigure" id="BaseResultMap">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="data_type" property="dataType" jdbcType="VARCHAR"/>
+        <result column="server_store_dir" property="serverStoreDir" jdbcType="VARCHAR"/>
+        <result column="creater" property="creater" jdbcType="VARCHAR"/>
+        <result column="query_target" property="queryTarget" jdbcType="VARCHAR"/>
+        <result column="execute_target" property="executeTarget" jdbcType="VARCHAR"/>
+        <result column="create_date" property="createDate" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Table_Name">
+        DM_CONFIGURE
+    </sql>
+
+    <sql id="Base_Column_List">
+        id, data_type, server_store_dir, creater,query_target , execute_target,create_date
+    </sql>
+
+    <!--新增操作 -->
+    <insert id="save" parameterType="com.dq.manage.entity.DataManagerConfigure" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into
+        <include refid="Table_Name"/>
+        (<include refid="Base_Column_List"/>)
+        values
+        (#{id},#{dataType},#{serverStoreDir},#{creater},#{queryTarget},#{executeTarget},now())
+    </insert>
+
+    <!--根据ID查询-->
+    <select id="findById" resultMap="BaseResultMap" parameterType="int">
+        select
+        <include refid="Base_Column_List"/>
+        from
+        <include refid="Table_Name"/>
+        where id = #{id}
+    </select>
+
+    <!--获取数据总数-->
+    <select id="getCount" parameterType="java.util.Map" resultType="int">
+        select count(1) from
+        <include refid="Table_Name"/>
+        where 1=1
+        <include refid="sql_query"/>
+    </select>
+
+    <!-- 查询所有数据-->
+    <select id="findAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from
+        <include refid="Table_Name"/>
+        order by create_date desc
+    </select>
+
+    <!-- 通过条件查询所有数据-->
+    <select id="findByMap" parameterType="java.util.Map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from
+        <include refid="Table_Name"/>
+        where 1=1
+        <include refid="sql_query"/>
+        order by create_date desc
+    </select>
+
+    <!--分组分页查询-->
+    <select id="findByPage" parameterType="java.util.Map" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="Table_Name"/>
+        where 1=1
+        <include refid="sql_query"/>
+        order by create_date desc
+        limit #{startRowNum}, #{pageSize}
+    </select>
+
+    <!--更新-->
+    <update id="update" parameterType="com.dq.manage.entity.DataManagerConfigure">
+        update
+        <include refid="Table_Name"/>
+        <include refid="sql_update"/>
+        where id = #{id}
+    </update>
+
+    <!--根据ID删除-->
+    <delete id="deleteById" parameterType="int">
+        delete from
+        <include refid="Table_Name"/>
+        where id = #{id}
+    </delete>
+
+    <sql id="sql_query">
+        <if test="search != null and search != '' ">
+            and (
+            data_type like CONCAT('%', #{search}, '%')
+            or server_store_dir like CONCAT('%', #{search}, '%')
+            or creater like CONCAT('%', #{search}, '%')
+            )
+        </if>
+        <if test="dataType != null">
+            <![CDATA[and data_type = #{dataType}]]>
+        </if>
+        <if test="serverStoreDir != null">
+            <![CDATA[and server_store_dir = #{serverStoreDir}]]>
+        </if>
+        <if test="creater != null">
+            <![CDATA[and creater = #{creater}]]>
+        </if>
+        <if test="queryTarget != null">
+            <![CDATA[and query_target = #{queryTarget}]]>
+        </if>
+        <if test="executeTarget != null">
+            <![CDATA[and execute_target = #{executeTarget}]]>
+        </if>
+        <if test="createDate != null ">
+            <![CDATA[and create_date = #{createDate}]]>
+        </if>
+    </sql>
+
+    <sql id="sql_update">
+        <set>
+            <if test="dataType != null">
+                <![CDATA[ data_type = #{dataType},]]>
+            </if>
+            <if test="serverStoreDir != null">
+                <![CDATA[ server_store_dir = #{serverStoreDir},]]>
+            </if>
+            <if test="creater != null">
+                <![CDATA[ creater = #{creater},]]>
+            </if>
+            <if test="queryTarget != null">
+                <![CDATA[ query_target = #{queryTarget},]]>
+            </if>
+            <if test="executeTarget != null">
+                <![CDATA[ execute_target = #{executeTarget},]]>
+            </if>
+        </set>
+    </sql>
+
+
+</mapper>

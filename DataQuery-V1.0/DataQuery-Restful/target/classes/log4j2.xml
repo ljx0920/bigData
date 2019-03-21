@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--这个Status用于设置log4j的内部输出，一般设为OFF，或者ERROR-->
+<Configuration status="OFF">
+
+    <!--日志存放目录以日志压缩存放目录-->
+    <Properties>
+        <Property name="LOG_HOME">/home/clouddata/iovCloud/log/restful</Property>
+        <Property name="fileGz">/home/clouddata/iovCloud/log/restful</Property>
+    </Properties>
+
+    <Appenders>
+        <!--控制台输出-->
+        <Console name="SYSOUT" target="SYSTEM_OUT">
+            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            <!-- 输出日志的格式 -->
+            <PatternLayout pattern="[Restful-log4j2][%d{HH:mm:ss.SSS}][%-5level][%logger{2}]-%msg%n"/>
+        </Console>
+
+        <!--DEBUG级别日志输出-->
+        <RollingRandomAccessFile name="DebugFile"
+                                 fileName="${LOG_HOME}/restful_debug.log"
+                                 filePattern="${LOG_HOME}/restful_debug.%d{yyyyMMdd}.log">
+            <Filters>
+                <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy modulate="true" interval="24"/>
+                <SizeBasedTriggeringPolicy size="1024 MB"/>
+            </Policies>
+            <!-- DefaultRolloverStrategy属性如不设置，则默认为最多同一文件夹下7个文件，这里设置了20 -->
+            <DefaultRolloverStrategy max="20"/>
+        </RollingRandomAccessFile>
+
+        <!--INFO级别日志输出-->
+        <RollingRandomAccessFile name="InfoFile"
+                                 fileName="${LOG_HOME}/restful_info.log"
+                                 filePattern="${LOG_HOME}/restful_info.%d{yyyyMMdd}.log">
+            <Filters>
+                <ThresholdFilter level="warn" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy modulate="true" interval="24"/>
+                <SizeBasedTriggeringPolicy size="1024 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingRandomAccessFile>
+
+        <!--WARNING级别日志输出-->
+        <RollingRandomAccessFile name="WarnFile"
+                                 fileName="${LOG_HOME}/restful_warning.log"
+                                 filePattern="${LOG_HOME}/restful_warning.%d{yyyyMMdd}.log">
+            <Filters>
+                <ThresholdFilter level="error" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="warn" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy modulate="true" interval="24"/>
+                <SizeBasedTriggeringPolicy size="1024 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingRandomAccessFile>
+
+        <!--ERROR级别日志输出-->
+        <RollingRandomAccessFile name="ErrorFile"
+                                 fileName="${LOG_HOME}/restful_error.log"
+                                 filePattern="${LOG_HOME}/restful_error.%d{yyyyMMdd}.log">
+            <Filters>
+                <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy modulate="true" interval="24"/>
+                <SizeBasedTriggeringPolicy size="1024 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingRandomAccessFile>
+    </Appenders>
+
+    <!--然后定义logger，只有定义了logger并引入的appender，appender才会生效-->
+    <Loggers>
+        <!--过滤掉spring的一些无用的DEBUG信息-->
+        <Root level="Debug">
+            <AppenderRef ref="SYSOUT"/>
+            <AppenderRef ref="DebugFile"/>
+            <AppenderRef ref="InfoFile"/>
+            <AppenderRef ref="WarnFile"/>
+            <AppenderRef ref="ErrorFile"/>
+        </Root>
+
+        <Logger name="com.tscloud" level="info"/>
+        <Logger name="com.iov" level="info"/>
+        <Logger name="com.alibaba" level="info"/>
+        <Logger name="log4j2.logger.org.eclipse.jetty.servlet.ServletHandler" level="info"/>
+
+        <Logger name="com.alibaba.dubbo.registry.zookeeper" level="error"/>
+        <Logger name="org.apache.zookeeper" level="error"/>
+        <Logger name="com.alibaba.dubbo.config" level="error"/>
+    </Loggers>
+</Configuration>

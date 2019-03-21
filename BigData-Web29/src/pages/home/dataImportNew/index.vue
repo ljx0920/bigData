@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<mes-table-layout :tree-data="treeData" ref="layout">
+<<<<<<< HEAD
 		<div class="form1" slot="container">
 			<p1>请输入以下信息</p1>
 			<!-- <el-form ref = "form" :model = "form">
@@ -9,6 +10,14 @@
 				</el-form-item>
 			</el-form>
 			 -->
+=======
+		<div class="mes-content" slot="container">
+			<p1>请输入以下信息</p1>
+			<el-form ref = "form" model = "form">
+				<el-form-item lable = "课题">
+			</el-form>
+			
+>>>>>>> e10212a07eb61f28afed3b9dd130234dc8223128
 		</div>
 		</mes-table-layout>
 		
@@ -49,6 +58,7 @@
 </script>
 
 <style>
+<<<<<<< HEAD
 		.el-date-editor.el-input {
 		width: 100% !important;
 	}
@@ -60,4 +70,7 @@
 	.el-dialog--small {
 		width: 40%;
 	}
+=======
+	
+>>>>>>> e10212a07eb61f28afed3b9dd130234dc8223128
 </style>

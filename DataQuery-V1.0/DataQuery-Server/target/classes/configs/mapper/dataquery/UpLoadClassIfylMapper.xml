@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dq.manage.mapper.UpLoadClassIfylMapper">
+
+    <resultMap type="com.dq.manage.entity.UploadClassify" id="BaseResultMap">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="parent_id" property="parentId" jdbcType="INTEGER"/>
+        <result column="level" property="level" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="description" property="description" jdbcType="VARCHAR"/>
+        <result column="item_order" property="itemOrder" jdbcType="INTEGER"/>
+        <result column="status" property="status" jdbcType="INTEGER"/>
+        <result column="icon" property="icon" jdbcType="VARCHAR"/>
+        <result column="create_date" property="createDate" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Table_Name">
+        DM_UPLOAD_CLASSIFY
+    </sql>
+
+    <sql id="Base_Column_List">
+        id, parent_id, level, name, description, item_order, icon, status, create_date
+    </sql>
+
+    <!--新增操作 -->
+    <insert id="save" parameterType="com.dq.manage.entity.UploadClassify" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into
+        <include refid="Table_Name"/>
+        (<include refid="Base_Column_List"/>)
+        values
+        (#{id},#{parentId},#{level},#{name},#{description},#{itemOrder},#{icon},#{status},now())
+    </insert>
+
+    <!--根据ID查询-->
+    <select id="findById" resultMap="BaseResultMap" parameterType="int">
+        select
+        <include refid="Base_Column_List"/>
+        from
+        <include refid="Table_Name"/>
+        where id = #{id}
+    </select>
+
+    <!--根据名称查询ID-->
+    <select id="findByDateName" resultType="java.lang.String" parameterType="java.lang.String">
+        select max(id)
+        from
+        <include refid="Table_Name"/>
+        where name = #{name}
+    </select>
+
+    <!--获取数据总数-->
+    <select id="getCount" parameterType="java.util.Map" resultType="int">
+        select count(1) from
+        <include refid="Table_Name"/>
+        where 1=1
+        <include refid="sql_query"/>
+    </select>
+
+    <select id="findByUpLoadClassIfyId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from
+        DM_UPLOAD_CLASSIFY
+        where parent_id = #{parentId}
+    </select>
+
+
+    <!-- 查询所有数据-->
+    <select id="findAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from
+        <include refid="Table_Name"/>
+        ORDER BY `level` ASC, item_order ASC
+    </select>
+
+    <!-- 通过条件查询所有数据-->
+    <select id="findByMap" parameterType="java.util.Map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from
+        <include refid="Table_Name"/>
+        where 1=1
+        <include refid="sql_query"/>
+        ORDER BY `level` ASC, item_order ASC
+    </select>
+
+<!--    &lt;!&ndash; 通过条件查询所有数据&ndash;&gt;
+    <select id="queryCollect" parameterType="java.util.Map" resultMap="BaseResultMap">
+        SELECT ap.* FROM DS_ANALYSIS_PANEL ap,
+        DS_COLLECT c
+        WHERE ap.id = c.analysis_panel_id
+        AND c.user_id = #{userId}
+        <if test="analysisPanelIdList != null">
+            and ap.id in
+            <foreach collection="analysisPanelIdList" index="index" item="analysisPanelIdList" open="(" separator="," close=")">
+                #{analysisPanelIdList}
+            </foreach>
+        </if>
+        ORDER BY `level` ASC, item_order ASC
+    </select>-->
+
+    <!--分组分页查询-->
+    <select id="findByPage" parameterType="java.util.Map" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="Table_Name"/>
+        where 1=1
+        <include refid="sql_query"/>
+        order by create_date desc
+        limit #{startRowNum}, #{pageSize}
+    </select>
+
+    <!--更新-->
+    <update id="update" parameterType="com.dq.manage.entity.UploadClassify">
+        update
+        <include refid="Table_Name"/>
+        <include refid="sql_update"/>
+        where id = #{id}
+    </update>
+
+    <!--根据ID删除-->
+    <delete id="deleteById" parameterType="int">
+        delete from
+        <include refid="Table_Name"/>
+        where id = #{id}
+    </delete>
+
+    <sql id="sql_query">
+        <if test="parentId != null  and parentId != '' ">
+            <![CDATA[
+					and parent_id = #{parentId}
+                   ]]>
+        </if>
+        <if test="level != null  and level != ''">
+            <![CDATA[
+					and level = #{level}
+				]]>
+        </if>
+        <if test="name != null and name != '' ">
+            <![CDATA[
+					and name = #{name}
+				]]>
+        </if>
+        <if test="description != null  and description != '' ">
+            <![CDATA[
+					and description = #{description}
+				]]>
+        </if>
+        <if test="itemOrder != null">
+            <![CDATA[
+					and item_order = #{itemOrder}
+				]]>
+        </if>
+        <if test="icon != null  and icon != '' ">
+            <![CDATA[
+					and icon = #{icon}
+				]]>
+        </if>
+        <if test="status != null  and status != '' ">
+            <![CDATA[
+					and status = #{status}
+				]]>
+        </if>
+        <if test="analysisPanelIdList != null">
+            and id in
+            <foreach collection="analysisPanelIdList" index="index" item="analysisPanelIdList" open="(" separator="," close=")">
+                #{analysisPanelIdList}
+            </foreach>
+        </if>
+    </sql>
+
+    <!--更新操作-->
+    <sql id="sql_update">
+        <set>
+            <if test="parentId != null  and parentId != '' ">
+                <![CDATA[
+					parent_id = #{parentId},
+                   ]]>
+            </if>
+            <if test="level != null  and level != ''">
+                <![CDATA[
+					level = #{level},
+				]]>
+            </if>
+            <if test="name != null  and name != '' ">
+                <![CDATA[
+					name = #{name},
+				]]>
+            </if>
+            <if test="description != null  and description != '' ">
+                <![CDATA[
+					description = #{description},
+				]]>
+            </if>
+            <if test="itemOrder != null">
+                <![CDATA[
+					item_order = #{itemOrder},
+				]]>
+            </if>
+            <if test="icon != null  and icon != '' ">
+                <![CDATA[
+					icon = #{icon},
+				]]>
+            </if>
+            <if test="status != null  and status != '' ">
+                <![CDATA[
+					status = #{status},
+				]]>
+            </if>
+        </set>
+    </sql>
+
+</mapper>

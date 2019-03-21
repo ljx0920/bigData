@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dq.manage.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.dq.manage.entity.User" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="name" property="name" jdbcType="VARCHAR" />
+    <id column="mobile_phone" property="mobilePhone" jdbcType="VARCHAR" />
+    <result column="role_id" property="roleId" jdbcType="SMALLINT" />
+    <result column="user" property="user" jdbcType="VARCHAR" />
+    <result column="pwd" property="pwd" jdbcType="VARCHAR" />
+    <result column="birthday" property="birthday" jdbcType="DATE" />
+    <result column="gender" property="gender" jdbcType="VARCHAR" />
+    <result column="member_code" property="memberCode" jdbcType="VARCHAR" />
+    <result column="unit" property="unit" jdbcType="VARCHAR" />
+    <result column="start_date" property="startDate" jdbcType="DATE" />
+    <result column="end_date" property="endDate" jdbcType="DATE" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="del_flag" property="delFlag" jdbcType="INTEGER" />
+    <result column="p_id" property="pId" jdbcType="INTEGER" />
+    <result column="department_id" property="departmentId" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    id,p_id,department_id ,name, mobile_phone, role_id, user, pwd, birthday, gender, member_code, unit,
+    start_date, end_date, del_flag, create_date
+  </sql>
+
+  <insert id="save" parameterType="com.dq.manage.entity.User" useGeneratedKeys="true" keyProperty="id"
+          keyColumn="id" >
+    insert into CS_USER ( <include refid="Base_Column_List" />)
+    values (#{id,jdbcType=INTEGER},#{pId,jdbcType=INTEGER},#{departmentId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{mobilePhone,jdbcType=VARCHAR},
+      #{roleId,jdbcType=SMALLINT}, #{user,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, 
+      #{birthday,jdbcType=DATE}, #{gender,jdbcType=VARCHAR}, #{memberCode,jdbcType=VARCHAR}, 
+      #{unit,jdbcType=VARCHAR}, #{startDate,jdbcType=DATE}, #{endDate,jdbcType=DATE}, 
+      0,now())
+  </insert>
+
+  <!--根据ID查询-->
+  <select id="findById" resultMap="BaseResultMap" parameterType="int" >
+    select
+    <include refid="Base_Column_List" />
+    from CS_USER
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <!--获取数据总数-->
+  <select id="getCount" parameterType="java.util.Map" resultType="int">
+    select count(1) from CS_USER where 1=1
+    <include refid="sql_query"/>
+  </select>
+
+  <!-- 查询所有数据-->
+  <select id="findAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from CS_USER order by create_date desc
+  </select>
+
+  <!-- 通过条件查询所有数据-->
+  <select id="findByMap" parameterType="java.util.Map" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from CS_USER where 1=1
+    <include refid="sql_query"/>
+    order by create_date desc
+  </select>
+
+  <!--分组分页查询-->
+  <select id="findByPage" parameterType="java.util.Map" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM CS_USER where 1=1
+    <include refid="sql_query"/>
+    order by create_date desc
+    limit #{startRowNum}, #{pageSize}
+  </select>
+
+  <!--更新-->
+  <update id="update" parameterType="com.dq.manage.entity.User">
+    update CS_USER
+    <include refid="sql_update"/>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <!--根据ID删除-->
+  <delete id="deleteById" parameterType="int" >
+    delete from CS_USER
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <sql id="sql_query">
+    <if test="name != null and name !=''" >
+      <![CDATA[and name = #{name,jdbcType=SMALLINT}]]>
+    </if>
+    <if test="mobilePhone != null and mobilePhone!=''" >
+      <![CDATA[and mobile_phone = #{mobilePhone,jdbcType=VARCHAR}]]>
+    </if>
+    <if test="roleId != null" >
+      <![CDATA[ and role_id = #{roleId,jdbcType=SMALLINT}]]>
+    </if>
+    <if test="pId != null" >
+      <![CDATA[ and p_id = #{pId,jdbcType=INTEGER}]]>
+    </if>
+    <if test="departmentId != null and departmentId !=''" >
+      <![CDATA[ and department_id = #{departmentId,jdbcType=INTEGER}]]>
+    </if>
+    <if test="user != null and user!=''" >
+      <![CDATA[and user = #{user,jdbcType=VARCHAR}]]>
+    </if>
+    <if test="pwd != null and pwd !=''" >
+      <![CDATA[and pwd = #{pwd,jdbcType=VARCHAR}]]>
+    </if>
+    <if test="birthday != null and birthday!=''" >
+      <![CDATA[and birthday = #{birthday,jdbcType=DATE}]]>
+    </if>
+    <if test="gender != null and gender !=''" >
+      <![CDATA[and gender = #{gender,jdbcType=VARCHAR}]]>
+    </if>
+    <if test="memberCode != null and memberCode!=''" >
+      <![CDATA[and member_code = #{memberCode,jdbcType=VARCHAR}]]>
+    </if>
+    <if test="unit != null and unit !=''" >
+      <![CDATA[ and unit = #{unit,jdbcType=VARCHAR}]]>
+    </if>
+    <if test="startDate != null " >
+      <![CDATA[and start_date = #{startDate,jdbcType=DATE}]]>
+    </if>
+    <if test="endDate != null " >
+      <![CDATA[and end_date = #{endDate,jdbcType=DATE}]]>
+    </if>
+    <if test="delFlag != null" >
+      <![CDATA[and del_flag = #{delFlag,jdbcType=INTEGER}]]>
+    </if>
+    <if test="createDate != null " >
+      <![CDATA[ and  create_date = #{createDate,jdbcType=TIMESTAMP}]]>
+    </if>
+  </sql>
+
+  <sql id="sql_update"  >
+    <set >
+      <if test="name != null and name !=''" >
+        <![CDATA[name = #{name,jdbcType=SMALLINT},]]>
+      </if>
+      <if test="mobilePhone != null and mobilePhone!=''" >
+        <![CDATA[mobile_phone = #{mobilePhone,jdbcType=VARCHAR},]]>
+      </if>
+      <if test="roleId != null" >
+        <![CDATA[role_id = #{roleId,jdbcType=SMALLINT},]]>
+      </if>
+      <if test="pId != null" >
+        <![CDATA[p_id = #{pId,jdbcType=INTEGER},]]>
+      </if>
+      <if test="departmentId != null" >
+        <![CDATA[department_id = #{departmentId,jdbcType=INTEGER},]]>
+      </if>
+      <if test="user != null and user!=''" >
+        <![CDATA[user = #{user,jdbcType=VARCHAR},]]>
+      </if>
+      <if test="pwd != null and pwd !=''" >
+        <![CDATA[pwd = #{pwd,jdbcType=VARCHAR},]]>
+      </if>
+      <if test="birthday != null and birthday!=''" >
+        <![CDATA[birthday = #{birthday,jdbcType=DATE},]]>
+      </if>
+      <if test="gender != null and gender !=''" >
+        <![CDATA[gender = #{gender,jdbcType=VARCHAR},]]>
+      </if>
+      <if test="memberCode != null and memberCode!=''" >
+        <![CDATA[member_code = #{memberCode,jdbcType=VARCHAR},]]>
+      </if>
+      <if test="unit != null and unit !=''" >
+        <![CDATA[unit = #{unit,jdbcType=VARCHAR},]]>
+      </if>
+      <if test="startDate != null " >
+        <![CDATA[start_date = #{startDate,jdbcType=DATE},]]>
+      </if>
+      <if test="endDate != null " >
+        <![CDATA[end_date = #{endDate,jdbcType=DATE},]]>
+      </if>
+      <if test="delFlag != null" >
+        <![CDATA[del_flag = #{delFlag,jdbcType=INTEGER},]]>
+      </if>
+      <if test="true"><![CDATA[ create_date=now(),]]></if>
+    </set>
+  </sql>
+
+</mapper>

@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bda1219b-f18b-4208-bb49-89e8ee5a39b3" name="Default Changelist" comment="Merge branch 'master' of http://github.com/ljx0920/bigData&#10;&#10;# Conflicts:&#10;#&#9;BigData-Web29/src/config/fetch.js&#10;#&#9;BigData-Web29/src/config/formData.js&#10;#&#9;BigData-Web29/src/pages/home/dataImportNew/index.vue&#10;#&#9;BigData-Web29/src/pages/home/dataImportNew/service.js&#10;#&#9;BigData-Web29/src/pages/home/dataQueryDownlode/index.vue&#10;#&#9;BigData-Web29/src/pages/home/dataQueryDownlode/service.js&#10;#&#9;BigData-Web29/src/pages/home/dataimport/create.vue&#10;#&#9;BigData-Web29/src/pages/home/manage/create.vue&#10;#&#9;BigData-Web29/src/pages/home/manage/index.vue&#10;#&#9;BigData-Web29/src/pages/home/recentimport/index.vue&#10;#&#9;BigData-Web29/src/store/modules/user.js">
+      <change beforePath="$PROJECT_DIR$/BigData-Web29/src/config/fetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/BigData-Web29/src/config/fetch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BigData-Web29/src/config/formData.js" beforeDir="false" afterPath="$PROJECT_DIR$/BigData-Web29/src/config/formData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BigData-Web29/src/pages/home/dataImportNew/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/BigData-Web29/src/pages/home/dataImportNew/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BigData-Web29/src/pages/home/dataImportNew/service.js" beforeDir="false" afterPath="$PROJECT_DIR$/BigData-Web29/src/pages/home/dataImportNew/service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BigData-Web29/src/pages/home/dataQueryDownlode/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/BigData-Web29/src/pages/home/dataQueryDownlode/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BigData-Web29/src/pages/home/dataQueryDownlode/service.js" beforeDir="false" afterPath="$PROJECT_DIR$/BigData-Web29/src/pages/home/dataQueryDownlode/service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BigData-Web29/src/pages/home/dataimport/create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/BigData-Web29/src/pages/home/dataimport/create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BigData-Web29/src/pages/home/manage/create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/BigData-Web29/src/pages/home/manage/create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BigData-Web29/src/pages/home/manage/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/BigData-Web29/src/pages/home/manage/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BigData-Web29/src/pages/home/recentimport/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/BigData-Web29/src/pages/home/recentimport/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BigData-Web29/src/store/modules/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/BigData-Web29/src/store/modules/user.js" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Domain/target/" />
+    <ignored path="$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/Cloud-Common/Common-V1.0/target/" />
+    <ignored path="$PROJECT_DIR$/Cloud-Common/Common-V2.0/target/" />
+    <ignored path="$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Restful/target/" />
+    <ignored path="$PROJECT_DIR$/DataQuery-V1.0/target/" />
+    <ignored path="$PROJECT_DIR$/Cloud-Common/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Domain/src/main/java/com/dq/manage/entity/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="17" column="17" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/java/com/dq/manage/config/MyBatisMapperScannerConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Restful/src/main/java/com/dq/manage/config/SwaggerConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Domain/src/main/java/com/dq/manage/provider/UpLoadClassIfyProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BigData-Web29/src/config/fetch.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="67" column="60" selection-start-line="67" selection-start-column="60" selection-end-line="67" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>mysql</find>
+      <find>root</find>
+      <find>@Mapper</find>
+      <find>@Autowired</find>
+      <find>UpLoadClassIfyProvider</find>
+      <find>findByName</find>
+      <find>findByClassIfyIdGetFileItem</find>
+      <find>/uploadFile</find>
+      <find>findByUpLoadClassIfyId</find>
+      <find>dataTypeId</find>
+      <find>findByDateName</find>
+      <find>/by</find>
+      <find>upLoadFileItem</find>
+      <find>/byPage</find>
+      <find>getpage</find>
+      <find>getPage</find>
+      <find>servlet</find>
+      <find>UpLoadClassIfylMapper</find>
+      <find>save</find>
+      <find>findbyid</find>
+      <find>V2.0里的getPage</find>
+      <find>操作失败</find>
+      <find>extends</find>
+    </findStrings>
+    <dirStrings>
+      <dir>F:\hengRunTest\export\BigData-Cloud2.0\DataQuery-V1.0\DataQuery-Restful\src\main\webapp\swagger</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/Cloud-Common/Common-V1.0/pom.xml" />
+        <option value="$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Domain/src/main/java/com/dq/manage/entity/UploadClassify.java" />
+        <option value="$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/java/com/dq/manage/mapper/UpLoadClassIfylMapper.java" />
+        <option value="$PROJECT_DIR$/Cloud-Common/Common-V2.0/src/main/java/com/iov/common/framework/dubbointerface/BaseDubboInterface.java" />
+        <option value="$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/java/com/dq/manage/provider/UpLoadClassIfyProviderImpl.java" />
+        <option value="$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/java/com/dq/manage/provider/DataManageConfigureProviderImpl.java" />
+        <option value="$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/java/com/dq/manage/provider/UserLoginProviderImpl.java" />
+        <option value="$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/java/com/dq/manage/provider/UploadFileItemProviderImpl.java" />
+        <option value="$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Restful/src/main/java/com/dq/manage/restful/UploadClassIfyRestServer.java" />
+        <option value="$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/resources/configs/mapper/dataquery/UpLoadClassIfylMapper.xml" />
+        <option value="$PROJECT_DIR$/Cloud-Common/Common-V1.0/src/main/java/com/tscloud/common/framework/rest/impl/AbstractRestServerInterfaceImpl.java" />
+        <option value="$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Domain/src/main/java/com/dq/manage/entity/UploadFileItem.java" />
+        <option value="$PROJECT_DIR$/Cloud-Common/Common-V2.0/src/main/java/com/iov/common/framework/dubbointerface/impl/BaseDubboInterfaceImpl.java" />
+        <option value="$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/resources/configs/mapper/dataquery/UpLoadFileItemMapper.xml" />
+        <option value="$PROJECT_DIR$/Cloud-Common/Common-V2.0/src/main/java/com/iov/common/framework/rest/Page.java" />
+        <option value="$PROJECT_DIR$/Cloud-Common/Common-V2.0/src/main/java/com/iov/common/framework/rest/impl/AbstractRestServerImpl.java" />
+        <option value="$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Restful/src/main/java/com/dq/manage/restful/UploadFileItemRestServer.java" />
+        <option value="$PROJECT_DIR$/BigData-Web29/src/config/fetch.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="13" />
+    <option name="y" value="-14" />
+    <option name="width" value="1382" />
+    <option name="height" value="754" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="BigData-Cloud2.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BigData-Cloud2.0" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552276224032" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bigData" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.DataQueryRestApplication">
+    <configuration name="DataQueryRestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="DataQuery-Restful" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dq.manage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.dq.manage.DataQueryRestApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataQueryServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="DataQuery-Server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dq.manage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.dq.manage.DataQueryServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.DataQueryRestApplication" />
+        <item itemvalue="Spring Boot.DataQueryServerApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bda1219b-f18b-4208-bb49-89e8ee5a39b3" name="Default Changelist" comment="" />
+      <created>1550558354727</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1550558354727</updated>
+      <workItem from="1550558357706" duration="255000" />
+      <workItem from="1550558643734" duration="4681000" />
+      <workItem from="1550563650918" duration="6769000" />
+      <workItem from="1550622771095" duration="52000" />
+      <workItem from="1550623021825" duration="25903000" />
+      <workItem from="1550823181608" duration="3273000" />
+      <workItem from="1550830470510" duration="687000" />
+      <workItem from="1551054854252" duration="3206000" />
+      <workItem from="1551061949956" duration="5634000" />
+      <workItem from="1551141579079" duration="16756000" />
+      <workItem from="1551229138052" duration="9427000" />
+      <workItem from="1551313862498" duration="8448000" />
+      <workItem from="1551401192780" duration="3938000" />
+      <workItem from="1552005681438" duration="582000" />
+      <workItem from="1552016466146" duration="641000" />
+      <workItem from="1552269193571" duration="2364000" />
+      <workItem from="1552552785728" duration="790000" />
+      <workItem from="1553157228061" duration="3003000" />
+    </task>
+    <task id="LOCAL-00001" summary="2019/2/22">
+      <created>1550824132551</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1550824132551</updated>
+    </task>
+    <task id="LOCAL-00002" summary="2019/2/22">
+      <created>1553158153850</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1553158153851</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="96409000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26172465" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36006546" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="11" sideWeight="0.50075644" side_tool="true" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Spring" order="12" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32569557" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Maven" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2019/2/22" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019/2/22" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Domain/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="108" column="36" selection-start-line="108" selection-start-column="36" selection-end-line="108" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="52" column="22" lean-forward="true" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cloud-Common/Common-V1.0/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Restful/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/resources/configs/mapper/console/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Restful/src/main/java/com/dq/manage/consumer/DataQueryConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/java/com/dq/manage/provider/DataManageConfigureProviderImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cloud-Common/Common-V2.0/src/main/java/com/iov/common/framework/spring/ServiceBeanContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/java/com/dq/manage/provider/UserLoginProviderImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Restful/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Restful/src/main/webapp/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-web/4.3.17.RELEASE/spring-web-4.3.17.RELEASE.jar!/org/springframework/web/multipart/MultipartFile.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cloud-Common/Common-V1.0/src/main/java/com/tscloud/common/framework/rest/impl/AbstractRestServerInterfaceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="81" column="45" lean-forward="true" selection-start-line="81" selection-start-column="45" selection-end-line="81" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/java/com/dq/manage/DataQueryServerApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-105">
+          <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Domain/src/main/java/com/dq/manage/entity/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-132">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Domain/src/main/java/com/dq/manage/entity/RequestParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Domain/src/main/java/com/dq/manage/provider/UploadFileItemProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cloud-Common/Common-V1.0/src/main/java/com/tscloud/common/framework/rest/AbstractRestServerInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="37" column="18" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cloud-Common/Common-V2.0/src/main/java/com/iov/common/framework/rest/AbstractRestServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/java/com/dq/manage/provider/UploadFileItemProviderImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="51" column="26" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cloud-Common/Common-V2.0/src/main/java/com/iov/common/framework/mapper/BaseInterfaceMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/java/com/dq/manage/mapper/UploadFileItemMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/resources/configs/mapper/dataquery/UpLoadFileItemMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="131" column="22" lean-forward="true" selection-start-line="131" selection-start-column="22" selection-end-line="131" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Domain/src/main/java/com/dq/manage/entity/UploadFileItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cloud-Common/Common-V2.0/src/main/java/com/iov/common/framework/rest/Page.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/resources/configs/mapper/dataquery/UpLoadClassIfylMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="63" column="37" lean-forward="true" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cloud-Common/Common-V2.0/src/main/java/com/iov/common/framework/dubbointerface/BaseDubboInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cloud-Common/Common-V2.0/src/main/java/com/iov/common/framework/dubbointerface/impl/BaseDubboInterfaceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-105">
+          <caret line="18" column="94" lean-forward="true" selection-start-line="18" selection-start-column="94" selection-end-line="18" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/java/com/dq/manage/mapper/UpLoadClassIfylMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="51" lean-forward="true" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Domain/src/main/java/com/dq/manage/entity/DataManagerConfigure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Domain/src/main/java/com/dq/manage/entity/UploadClassify.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="e#495#496#0" expanded="true" />
+            <element signature="e#526#527#0" expanded="true" />
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#613#614#0" expanded="true" />
+            <element signature="e#778#779#0" expanded="true" />
+            <element signature="e#812#813#0" expanded="true" />
+            <element signature="e#1714#1715#0" expanded="true" />
+            <element signature="e#1742#1743#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cloud-Common/Common-V1.0/src/main/java/com/tscloud/common/tool/excel/ExcelEventParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/java/com/dq/manage/provider/UpLoadClassIfyProviderImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/resources/configs/provider/dubbo-dataquery-provider.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Restful/src/main/java/com/dq/manage/restful/UploadFileItemRestServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="152" column="46" selection-start-line="152" selection-start-column="46" selection-end-line="152" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cloud-Common/Common-V2.0/src/main/java/com/iov/common/framework/rest/impl/AbstractRestServerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="73" column="44" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Restful/src/main/java/com/dq/manage/restful/UploadClassIfyRestServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#deletingUploadTree#0;class#UploadClassIfyRestServer#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Domain/src/main/java/com/dq/manage/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Server/src/main/java/com/dq/manage/config/MyBatisMapperScannerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Restful/src/main/java/com/dq/manage/config/SwaggerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataQuery-V1.0/DataQuery-Domain/src/main/java/com/dq/manage/provider/UpLoadClassIfyProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BigData-Web29/src/config/fetch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="67" column="60" selection-start-line="67" selection-start-column="60" selection-end-line="67" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

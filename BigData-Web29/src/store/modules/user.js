@@ -155,6 +155,7 @@ function getMenu() {
 		"itemOrder": 3,
 		"icon": "sysManage/3.png",
 		"subSysMenus": null
+<<<<<<< HEAD
 	}, 
 // 	{
 // 		"id": "1400",
@@ -187,6 +188,38 @@ function getMenu() {
 // 		"subSysMenus": null
 // 	},
 	{
+=======
+	}, {
+		"id": "1400",
+		"createDate": null,
+		"updateDate": null,
+		"expandMap": null,
+		"parentId": "1000",
+		"parentName": "首页",
+		"level": 2,
+		"name": "数据查询",
+		"url": "/home/dataquery",
+		"description": "数据查询",
+		"itemOrder": 4,
+		"icon": "sysManage/4.png",
+		"subSysMenus": null
+	},
+	{
+		"id": "1500",
+		"createDate": null,
+		"updateDate": null,
+		"expandMap": null,
+		"parentId": "1000",
+		"parentName": "首页",
+		"level": 2,
+		"name": "数据导入",
+		"url": "/home/dataImportNew",
+		"description": "数据导入",
+		"itemOrder": 5,
+		"icon": "sysManage/2.png",
+		"subSysMenus": null
+	},{
+>>>>>>> e10212a07eb61f28afed3b9dd130234dc8223128
 		"id": "1600",
 		"createDate": null,
 		"updateDate": null,

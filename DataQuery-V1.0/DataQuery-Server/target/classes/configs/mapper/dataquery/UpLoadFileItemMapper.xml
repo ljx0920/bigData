@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dq.manage.mapper.UploadFileItemMapper">
+
+    <resultMap type="com.dq.manage.entity.UploadFileItem" id="BaseResultMap">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="data_type_id" property="dataTypeId" jdbcType="INTEGER"/>
+        <result column="upload_classify_id_1" property="uploadClassifyId1" jdbcType="INTEGER"/>
+        <result column="upload_classify_id_2" property="uploadClassifyId2" jdbcType="INTEGER"/>
+        <result column="upload_classify_id" property="uploadClassifyId" jdbcType="INTEGER"/>
+        <result column="data_type_name" property="dataTypeName" jdbcType="VARCHAR"/>
+        <result column="file_name" property="fileName" jdbcType="VARCHAR"/>
+        <result column="file_path" property="filePath" jdbcType="VARCHAR"/>
+        <result column="file_size" property="fileSize" jdbcType="VARCHAR"/>
+        <result column="importer" property="importer" jdbcType="VARCHAR"/>
+        <result column="import_time" property="importTime" jdbcType="VARCHAR"/>
+        <result column="batch_number" property="batchNumber" jdbcType="VARCHAR"/>
+        <result column="analytic_progress" property="analyticProgress" jdbcType="VARCHAR"/>
+        <result column="create_date" property="createDate" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Table_Name">
+        DM_UPLOAD_FILE_ITEM
+    </sql>
+
+    <sql id="Base_Column_List">
+        id,upload_classify_id_1,upload_classify_id_2,upload_classify_id, data_type_id, data_type_name, file_name, file_path, file_size, importer, import_time,batch_number, analytic_progress, create_date
+    </sql>
+
+    <!--新增操作 -->
+    <insert id="save" parameterType="com.dq.manage.entity.UploadFileItem" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into
+        <include refid="Table_Name"/>
+        (<include refid="Base_Column_List"/>)
+        values
+        (#{id},#{uploadClassifyId1},#{uploadClassifyId2},#{uploadClassifyId},#{dataTypeId},#{dataTypeName},#{fileName},#{filePath},#{fileSize},#{importer},#{importTime},#{batchNumber},#{analyticProgress},now())
+    </insert>
+
+    <!--根据ID查询-->
+    <select id="findById" resultMap="BaseResultMap" parameterType="int">
+        select
+        <include refid="Base_Column_List"/>
+        from
+        <include refid="Table_Name"/>
+        where id = #{id}
+    </select>
+
+    <!--获取数据总数-->
+    <select id="getCount" parameterType="java.util.Map" resultType="int">
+        select count(1) from
+        <include refid="Table_Name"/>
+        where 1=1
+        <include refid="sql_query"/>
+    </select>
+
+
+    <!--通过分类树得到文件数据项-->
+    <select id="findByClassIfyIdGetFileItem" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from
+        <include refid="Table_Name"/>
+        where upload_classify_id = #{uploadClassifyId} or upload_classify_id_1 = #{uploadClassifyId1} or upload_classify_id_2 = #{uploadClassifyId2}
+    </select>
+
+    <!-- 查询所有数据-->
+    <select id="findAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from
+        <include refid="Table_Name"/>
+    </select>
+
+    <!-- 通过条件查询所有数据-->
+    <select id="findByMap" parameterType="java.util.Map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from
+        <include refid="Table_Name"/>
+        where 1=1
+        <include refid="sql_query"/>
+    </select>
+
+
+    <!--分组分页查询-->
+    <select id="findByPage" parameterType="java.util.Map" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="Table_Name"/>
+        where 1=1
+        <include refid="sql_query"/>
+        order by create_date desc
+        limit #{startRowNum}, #{pageSize}
+    </select>
+
+
+    <!--更新-->
+    <update id="update" parameterType="com.dq.manage.entity.UploadClassify">
+        update
+        <include refid="Table_Name"/>
+        <include refid="sql_update"/>
+        where id = #{id}
+    </update>
+
+    <!--根据ID删除-->
+    <delete id="deleteById" parameterType="int">
+        delete from
+        <include refid="Table_Name"/>
+        where id = #{id}
+    </delete>
+
+    <sql id="sql_query">
+       <if test="search != null and search != '' ">
+            and (
+             data_type_name like CONCAT('%', #{search}, '%')
+            or file_name like CONCAT('%', #{search}, '%')
+            or file_path like CONCAT('%', #{search}, '%')
+            or importer like CONCAT('%', #{search}, '%')
+            or analytic_progress like CONCAT('%', #{search}, '%')
+            )
+        </if>
+        <if test="uploadClassifyId != null  ">
+            <![CDATA[
+					and upload_classify_id = #{uploadClassifyId}
+                   ]]>
+        </if>
+        <if test="uploadClassifyId1 != null  ">
+            <![CDATA[
+					and upload_classify_id_1 = #{uploadClassifyId1}
+                   ]]>
+        </if>
+        <if test="uploadClassifyId2 != null  ">
+            <![CDATA[
+					and upload_classify_id_2 = #{uploadClassifyId2}
+                   ]]>
+        </if>
+        <if test="dataTypeId != null  and dataTypeId != '' ">
+            <![CDATA[
+					and data_type_id = #{dataTypeId}
+                   ]]>
+        </if>
+        <if test="dataTypeName != null  and dataTypeName != ''">
+            <![CDATA[
+					and data_type_name = #{dataTypeName}
+				]]>
+        </if>
+        <if test="fileName != null and fileName != '' ">
+            <![CDATA[
+					and file_name = #{fileName}
+				]]>
+        </if>
+        <if test="filePath != null and filePath != '' ">
+            <![CDATA[
+					and file_path = #{filePath}
+				]]>
+        </if>
+        <if test="fileSize != null  ">
+            <![CDATA[
+					and file_size = #{fileSize}
+				]]>
+        </if>
+        <if test="importer != null  and importer != '' ">
+            <![CDATA[
+					and importer = #{importer}
+				]]>
+        </if>
+        <if test="importTime != null">
+            <![CDATA[
+					and import_time = #{importTime}
+				]]>
+        </if>
+        <if test="batchNumber != null">
+            <![CDATA[
+					and batch_number = #{batchNumber}
+				]]>
+        </if>
+        <if test="analyticProgress != null  and analyticProgress != '' ">
+            <![CDATA[
+					and analytic_progress = #{analyticProgress}
+				]]>
+        </if>
+        <if test="analysisPanelIdList != null">
+            and id in
+            <foreach collection="analysisPanelIdList" index="index" item="analysisPanelIdList" open="(" separator="," close=")">
+                #{analysisPanelIdList}
+            </foreach>
+        </if>
+    </sql>
+
+    <!--更新操作-->
+    <sql id="sql_update">
+        <set>
+            <if test="uploadClassifyId != null  and uploadClassifyId != '' ">
+                <![CDATA[
+					upload_classify_id = #{uploadClassifyId},
+                   ]]>
+            </if>
+            <if test="dataTypeId != null  and dataTypeId != '' ">
+                <![CDATA[
+					data_type_id = #{dataTypeId},
+                   ]]>
+            </if>
+            <if test="dataTypeName != null  and dataTypeName != ''">
+                <![CDATA[
+					data_type_name = #{dataTypeName},
+				]]>
+            </if>
+            <if test="fileName != null  and fileName != '' ">
+                <![CDATA[
+					file_name = #{fileName},
+				]]>
+            </if>
+            <if test="filePath != null  and filePath != '' ">
+                <![CDATA[
+					file_path = #{filePath},
+				]]>
+            </if>
+            <if test="fileSize != null  ">
+                <![CDATA[
+					file_size = #{fileSize},
+				]]>
+            </if>
+            <if test="importer != null  and importer != '' ">
+                <![CDATA[
+					importer = #{importer},
+				]]>
+            </if>
+            <if test="importTime != null">
+                <![CDATA[
+					import_time = #{importTime},
+				]]>
+            </if>
+            <if test="batchNumber != null and batchNumber != ''">
+                <![CDATA[
+					batch_number = #{batchNumber},
+				]]>
+            </if>
+            <if test="analyticProgress != null  and analyticProgress != '' ">
+                <![CDATA[
+					analytic_progress = #{analyticProgress},
+				]]>
+            </if>
+        </set>
+    </sql>
+
+</mapper>

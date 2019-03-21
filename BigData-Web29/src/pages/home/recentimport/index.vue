@@ -28,12 +28,19 @@
 					}, {
 						prop: "fileSize",
 						label: "文件大小"
+<<<<<<< HEAD
 					}, 
 // 					{
 // 						prop: "filePath",
 // 						label: "文件路径"
 // 					}, 
 					{
+=======
+					}, {
+						prop: "filePath",
+						label: "文件路径"
+					}, {
+>>>>>>> e10212a07eb61f28afed3b9dd130234dc8223128
 						prop: "importTime",
 						label: "上传时间"
 					}, {
