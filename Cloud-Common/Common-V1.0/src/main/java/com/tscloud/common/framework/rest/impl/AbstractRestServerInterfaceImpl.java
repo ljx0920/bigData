@@ -70,6 +70,7 @@ public abstract class AbstractRestServerInterfaceImpl<Entity extends TrackableEn
     public JsonViewObject getPage(Page page) {
         JSON result;
         String jsonStr = JSON.toJSONString(page);
+        System.out.println("getPage方法："+jsonStr);
         try {
             Map<String, Object> mapBean = Maps.newHashMap();
             if (page != null) {

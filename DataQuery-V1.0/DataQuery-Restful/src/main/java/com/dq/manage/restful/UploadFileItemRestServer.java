@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.dq.manage.consumer.DataQueryConsumer;
 import com.dq.manage.entity.DataManagerConfigure;
+import com.dq.manage.entity.UploadClassify;
 import com.dq.manage.entity.UploadFileItem;
 import com.dq.manage.provider.DataManagerConfigureProvider;
 import com.dq.manage.provider.UploadFileItemProvider;
@@ -43,7 +44,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.LogManager;
 import java.util.stream.Collectors;
-import com.dq.manage.restful.UploadClassIfyRestServer;
+import com.dq.manage.provider.UpLoadClassIfyProvider;
 
 /**
  * @author wei.wang5
@@ -136,11 +137,25 @@ public class UploadFileItemRestServer extends AbstractRestServerImpl<UploadFileI
             }
             uploadClassifyId = Integer.parseInt(kmId);
             dataMap.put("uploadClassifyId",uploadClassifyId);
-
+            dataMap.put("uploadClassifyId2",uploadClassifyId-1);
+            dataMap.put("uploadClassifyId1",uploadClassifyId-2);
             //System.out.println("判断里的kmId:"+kmId);
         }
         else {
+            Integer uploadClassifyId2 = 0;
+            Integer uploadClassifyId1 = 0;
+            try{
+                UploadClassIfyRestServer upload2 = new UploadClassIfyRestServer();
+                UploadClassify rq = upload2.getBaseDubboInterface().findById(uploadClassifyId);
+                uploadClassifyId2 = Integer.parseInt(rq.getParentId());
+                UploadClassify kt = upload2.getBaseDubboInterface().findById(uploadClassifyId2);
+                uploadClassifyId1 = Integer.parseInt(kt.getParentId());
+            }catch(DubboProviderException e) {
+                log.error("AbstractRestServerImpl save error, jsonStr:{}",e);
+            }
             dataMap.put("uploadClassifyId",uploadClassifyId);
+            dataMap.put("uploadClassifyId1",uploadClassifyId1);
+            dataMap.put("uploadClassifyId2",uploadClassifyId2);
         }
    //     dataMap.put("uploadClassifyId",uploadClassifyId);
         dataMap.put("dataTypeName",dataTypeName);

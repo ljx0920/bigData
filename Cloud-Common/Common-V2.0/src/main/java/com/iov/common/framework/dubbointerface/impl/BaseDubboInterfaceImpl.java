@@ -28,6 +28,7 @@ public abstract class BaseDubboInterfaceImpl<Entity extends TrackableEntity> imp
     @Override
     public Page<Entity> findByPage(Page page, Map<String, Object> map) throws DubboProviderException {
         try {
+            System.out.println("进入findByPage方法");
             page.setTotal(this.getBaseInterfaceMapper().getCount(map));
             page = Page.newInstance(page.getPageSize(), page.getTotal(), page.getPageNum());
             map.put("startRowNum", page.getStartRowNum());

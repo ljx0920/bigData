@@ -6,6 +6,8 @@
     <resultMap type="com.dq.manage.entity.UploadFileItem" id="BaseResultMap">
         <result column="id" property="id" jdbcType="INTEGER"/>
         <result column="data_type_id" property="dataTypeId" jdbcType="INTEGER"/>
+        <result column="upload_classify_id_1" property="uploadClassifyId1" jdbcType="INTEGER"/>
+        <result column="upload_classify_id_2" property="uploadClassifyId2" jdbcType="INTEGER"/>
         <result column="upload_classify_id" property="uploadClassifyId" jdbcType="INTEGER"/>
         <result column="data_type_name" property="dataTypeName" jdbcType="VARCHAR"/>
         <result column="file_name" property="fileName" jdbcType="VARCHAR"/>
@@ -23,7 +25,7 @@
     </sql>
 
     <sql id="Base_Column_List">
-        id,upload_classify_id, data_type_id, data_type_name, file_name, file_path, file_size, importer, import_time,batch_number, analytic_progress, create_date
+        id,upload_classify_id_1,upload_classify_id_2,upload_classify_id, data_type_id, data_type_name, file_name, file_path, file_size, importer, import_time,batch_number, analytic_progress, create_date
     </sql>
 
     <!--新增操作 -->
@@ -32,7 +34,7 @@
         <include refid="Table_Name"/>
         (<include refid="Base_Column_List"/>)
         values
-        (#{id},#{uploadClassifyId},#{dataTypeId},#{dataTypeName},#{fileName},#{filePath},#{fileSize},#{importer},#{importTime},#{batchNumber},#{analyticProgress},now())
+        (#{id},#{uploadClassifyId1},#{uploadClassifyId2},#{uploadClassifyId},#{dataTypeId},#{dataTypeName},#{fileName},#{filePath},#{fileSize},#{importer},#{importTime},#{batchNumber},#{analyticProgress},now())
     </insert>
 
     <!--根据ID查询-->
@@ -59,7 +61,7 @@
         <include refid="Base_Column_List"/>
         from
         <include refid="Table_Name"/>
-        where upload_classify_id = #{uploadClassifyId}
+        where upload_classify_id = #{uploadClassifyId} or upload_classify_id_1 = #{uploadClassifyId1} or upload_classify_id_2 = #{uploadClassifyId2}
     </select>
 
     <!-- 查询所有数据-->
@@ -122,6 +124,16 @@
         <if test="uploadClassifyId != null  ">
             <![CDATA[
 					and upload_classify_id = #{uploadClassifyId}
+                   ]]>
+        </if>
+        <if test="uploadClassifyId1 != null  ">
+            <![CDATA[
+					and upload_classify_id_1 = #{uploadClassifyId1}
+                   ]]>
+        </if>
+        <if test="uploadClassifyId2 != null  ">
+            <![CDATA[
+					and upload_classify_id_2 = #{uploadClassifyId2}
                    ]]>
         </if>
         <if test="dataTypeId != null  and dataTypeId != '' ">

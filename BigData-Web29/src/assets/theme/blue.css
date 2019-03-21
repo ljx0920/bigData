@@ -1,0 +1,10 @@
+.blue .mes__header{
+	background-color:rgb(57,141,238);
+	color:#FFF;
+}
+.blue .el-dialog__header{
+	background-color:rgb(57,141,238);
+}
+.blue .el-dialog__header .el-dialog__title{
+	color:#FFF;
+}

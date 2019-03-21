@@ -21,7 +21,13 @@ public class UploadFileItem extends TrackableEntity {
     private Integer dataTypeId;
 
 
-    @ApiModelProperty(value = "左侧树Id")
+    @ApiModelProperty(value = "左侧树课题Id")
+    private Integer uploadClassifyId1;
+
+    @ApiModelProperty(value = "左侧树日期Id")
+    private Integer uploadClassifyId2;
+
+    @ApiModelProperty(value = "左侧树科目Id")
     private Integer uploadClassifyId;
 
     @ApiModelProperty(value = "数据项名称")

@@ -46,6 +46,13 @@ public class Page<T> implements Serializable {
 
     private List<T> rows;
 
+//    public List<T> getRows() {
+//        return rows;
+//    }
+//    public void setRows(List<T> ROWS) {
+//        this.rows = ROWS;
+//    }
+
     private Page() {
     }
 

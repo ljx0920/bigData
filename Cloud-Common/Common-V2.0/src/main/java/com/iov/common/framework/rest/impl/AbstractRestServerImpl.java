@@ -1,12 +1,14 @@
 package com.iov.common.framework.rest.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.iov.common.framework.domain.TrackableEntity;
 import com.iov.common.framework.dubbointerface.BaseDubboInterface;
 import com.iov.common.framework.exception.DubboProviderException;
 import com.google.common.collect.Maps;
 import com.iov.common.framework.rest.*;import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.boot.jackson.JsonObjectDeserializer;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -61,6 +63,7 @@ public abstract class AbstractRestServerImpl<Entity extends TrackableEntity> imp
     public JsonViewObject getPage(@RequestBody Page<Entity> page) {
         JsonViewObject jsonView = JsonViewObject.newInstance();
         String jsonStr = JSON.toJSONString(page);
+        System.out.println("V2.0里的getPage："+jsonStr);
         try {
             Map<String, Object> mapBean = Maps.newHashMap();
             if (page != null) {
@@ -69,11 +72,19 @@ public abstract class AbstractRestServerImpl<Entity extends TrackableEntity> imp
                 }
             }
             page = this.getBaseDubboInterface().findByPage(page, mapBean);
+
+//            List list = page.getRows();
+//            String jsonStrResult = JSON.toJSONString(list);
+//            System.out.println("V2.0里的Page结果："+jsonStrResult);
+//            JSONObject jsonObj = JSONObject.parseObject(jsonStrResult);
+
             jsonView.success(page);
+
         } catch (DubboProviderException e) {
             jsonView.fail(e);
             log.error("{} getPage error, jsonStr:{}", this.getClass().getSimpleName(), jsonStr, e);
         }
+
         return jsonView;
     }
 
